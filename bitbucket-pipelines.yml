@@ -1,0 +1,8 @@
+image: icek889/sshpass:latest
+
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - sshpass -p "$SSHPASS" ssh -o StrictHostKeyChecking=no $SSHUSER@$SSHHOST "some commands ... "
